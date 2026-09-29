@@ -1,0 +1,9 @@
+# TLS private keys
+*.key
+*.pem
+certs/server.key
+
+# Environment/secrets
+.env
+.env.*
+!.env.example

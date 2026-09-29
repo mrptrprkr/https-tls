@@ -1,0 +1,15 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: https-tls-web
+
+    ports:
+      - "8080:80"
+      - "8443:443"
+
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+
+    restart: unless-stopped
